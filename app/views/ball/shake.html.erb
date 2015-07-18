@@ -1,5 +1,10 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "shake.js", async: true %>
+<% end %>
+
 <h1>
 <div class="shake shake-slow">
 <%= link_to @answers_list.sample, ball_shake_path %>
 </div>
 </h1>
+  <%= javascript_include_tag "custom_shake_handler.js", async: true %>
