@@ -87,6 +87,44 @@ $prefix-spec: true;
   $prefix-spec: $root-prefix-spec; 
 } 
 
+@mixin dampshake($x, $y, $rot, $name, $steps:90, $opacity:true) {
+  $r:0;
+  $h:0;
+  $v:0;
+
+  @include keyframes($name){
+    $interval: 1;
+    $step: 0;
+    @while $step < $steps {
+    $scale: (1-($step/$steps));
+    @if ($rot != 0deg){ $r: (random($rot) - $rot/2) * $scale; }
+      @else { $r: 0deg; }
+      @if ($x != 0px){ $h : (random($x) - $x/2) * $scale; } 
+        @else { $h : 0px; }
+      @if ($y != 0px){ $v : (random($y) - $y/2) * $scale; } 
+        @else { $v : 0px; }
+    
+      @if($step == 0){
+        #{$step}% {
+          @include vendorize(transform, translate(0px, 0px) rotate(0deg), webkit ms spec);
+          @if($opacity){
+            opacity: random(10)/10;
+          }
+        }  
+      } @else {
+        #{$step}% {
+          @include vendorize(transform, translate($h, $v) rotate($r), webkit ms spec);
+          @if($opacity){
+            opacity: (1 - random(10)/10 * $scale); 
+          }
+        }
+      }
+      $interval: $interval + 0.5;
+      $step: $step + $interval;
+    }
+  }
+}
+
 @mixin shake($x, $y, $rot, $name, $steps:10, $opacity:false) {
   $r:0deg;
   $h:0px;

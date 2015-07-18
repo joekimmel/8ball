@@ -18,6 +18,21 @@ $state:running;
 	@include vendorize(animation-play-state, $sta, webkit ms spec);
 }
 
+@mixin dampimation($name, $dur: $duration, $tim: $timing, $sta: $state) {
+  @include vendorize(animation-name, $name, webkit ms spec);
+  @include vendorize(animation-duration, $dur, webkit ms spec);
+  @include vendorize(animation-iteration-count, 1, webkit ms spec);
+  @include vendorize(animation-timing-function, $tim, webkit ms spec);
+  @include vendorize(animation-delay, 0, webkit ms spec);
+  @include vendorize(animation-play-state, $sta, webkit ms spec);
+}
+
+.dampshake {
+  display: inline-block;
+  @include vendorize(transform-origin, center center, webkit ms spec);
+  @include dampimation(damp-shake-harlem, 4s);
+}
+
 
 .shake {
 	display: inline-block;
@@ -81,3 +96,4 @@ $state:running;
 @include shake(0px, 0px, 15deg, 'shake-rotate', 2);
 @include shake(10px, 10px, 5deg, 'shake-opacity', 10, true);
 @include shake(40px, 40px, 20deg, 'shake-crazy', 10, true);
+@include dampshake(30px, 30px, 10deg, 'damp-shake-harlem');
