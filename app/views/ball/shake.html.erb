@@ -2,9 +2,14 @@
   <%= javascript_include_tag "shake.js", async: true %>
 <% end %>
 
-<h1>
+<div class="answer-triangle">
+
 <div class="shake shake-slow dampshake damp-shake-harlem">
-<%= link_to @answers_list.sample, ball_shake_path %>
+
+<%= link_to @answers_list.sample, ball_shake_path, class: "ball-answer"%>
+
 </div>
-</h1>
+
+</div>
+
   <%= javascript_include_tag "custom_shake_handler.js", async: true %>

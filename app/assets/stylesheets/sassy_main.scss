@@ -1,2 +1,37 @@
 @import "sassiness/cs_shake_mixins.scss";
 @import "sassiness/cs_shake.scss";
+
+.ball-answer{
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+  font-variant: small-caps;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 150%;
+  position: relative;
+  top: -6.8em;
+  left: -1em;
+  z-index: 100;
+}
+
+
+.answer-triangle {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 11em solid transparent;
+    border-top: 11em solid black;
+    left: 1em;
+    top: 1em;
+    z-index: 10;
+}
+
+html { 
+  font-size: 1.5em; 
+}
+body { 
+  font-size: 100%;
+  line-height: 1.1; 
+}
