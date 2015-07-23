@@ -2,6 +2,11 @@
   <%= javascript_include_tag "shake.js", async: true %>
 <% end %>
 
+<%= form_tag(@form_url, method: :get) do %>
+  <%= select_tag("answer_type", options_for_select(@form.answer_types)) %>
+  <%= submit_tag "Shake" %>
+<% end %>
+
 <div class="answer-triangle">
 
 <div class="shake shake-slow dampshake damp-shake-harlem">
@@ -12,4 +17,6 @@
 
 </div>
 
-  <%= javascript_include_tag "custom_shake_handler.js", async: true %>
+
+
+<%= javascript_include_tag "custom_shake_handler.js", async: true %>
