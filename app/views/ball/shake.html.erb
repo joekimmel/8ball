@@ -2,7 +2,7 @@
   <%= javascript_include_tag "shake.js", async: true %>
 <% end %>
 
-<%= form_tag(@form_url, method: :get) do %>
+<%= form_tag(@form_url, method: :get, id: "shakeForm") do %>
   <%= select_tag("answer_type", options_for_select(@form.answer_types, @answer_type)) %>
   <%= submit_tag "Shake" %>
 <% end %>
