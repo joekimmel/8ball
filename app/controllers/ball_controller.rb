@@ -105,6 +105,7 @@ class BallController < ApplicationController
           "It looks pretty.. but I have ideas.",
           "The text isn’t clear..",
           "Comic sans.",
+          "Let's do a story mapping",
           "The color isn’t right",
           "This is crap.",
           "Are you blind?",
