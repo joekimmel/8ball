@@ -122,13 +122,13 @@ body {
   background: -webkit-gradient(radial, center center, 0, center center, 460, from(#00aedb), to(#000000));
 
   /* Safari 5.1+, Chrome 10+ */
-  background: -webkit-radial-gradient(circle, #00aedb, #000000);
+  background: -webkit-radial-gradient(circle, closest-side, #00aedb, #000000);
 
   /* Firefox 3.6+ */
-  background: -moz-radial-gradient(circle, #00aedb, #000000);
+  background: -moz-radial-gradient(circle, closest-side, #00aedb, #000000);
 
   /* IE 10 */
-  background: -ms-radial-gradient(circle, #00aedb, #000000);
+  background: -ms-radial-gradient(circle, closest-side, #00aedb, #000000);
 
   /* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
 }
