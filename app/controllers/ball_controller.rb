@@ -49,7 +49,8 @@ class BallController < ApplicationController
           "So dress well in Appfolio style",
           "Love it",
           "patch?",
-          "We can do it tonight as live 2"
+          "We can do it tonight as live 2",
+          "Time's up!"
         ],
         qa: [
           "Can I get a demo?",
@@ -69,7 +70,8 @@ class BallController < ApplicationController
           "If its green on CI, then sure",
           "Have you actually tried it?",
           "Its fantastic and perfect",
-          "I’m not QAing this."
+          "I’m not QAing this.",
+          "Your mother told you not to do that"
         ],
         product: [
           "Will that take longer?",
@@ -176,7 +178,8 @@ class BallController < ApplicationController
 
     @form_url = request.original_url.include?("ball")? "shake" : "ball/shake"
 
-    @form = ShakeForm.new(params[:answer_type] || "traditional")
+    @answer_type = params[:answer_type] || "traditional"
+    @form = ShakeForm.new(@answer_type)
 
     @answers_list = @form.answer_lists[@form.answer_type.to_sym]
 

@@ -3,7 +3,7 @@
 <% end %>
 
 <%= form_tag(@form_url, method: :get) do %>
-  <%= select_tag("answer_type", options_for_select(@form.answer_types)) %>
+  <%= select_tag("answer_type", options_for_select(@form.answer_types, @answer_type)) %>
   <%= submit_tag "Shake" %>
 <% end %>
 
