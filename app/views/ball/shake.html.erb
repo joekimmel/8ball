@@ -7,9 +7,13 @@
     &nbsp;
   </div>
   <div class="row">
-    <div class="col-md-3">&nbsp;</div>
-    <div class="col-md-6">
-      <%= form_tag(@form_url, method: :get, id: "shakeForm") do %>
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_tag(
+        @form_url, 
+        method: :get, 
+        id: "shakeForm",
+        class: "form-horizontal center"
+      ) do %>
         <%= select_tag(
           "answer_type", 
           options_for_select(@form.answer_types, @answer_type)
@@ -17,7 +21,6 @@
         <%= submit_tag "Shake", class: "btn btn-primary" %>
       <% end %>
     </div>
-    <div class=col-md-3">&nbsp;</div>
   </div>
 
   <div class="row">
