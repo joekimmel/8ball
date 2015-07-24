@@ -32,6 +32,25 @@
 html { 
   font-size: 1.5em; 
 }
+
+@media (min-width: 300px) and (max-width: 800px){
+    html {
+        font-size: 1.0em;
+    }
+    .answer-triangle {
+        border: 7em solid transparent;
+        border-top: 10em solid black;
+    }
+    .ball-answer{
+        font-size: 110%;
+        top: -8.7em;
+        left: -1.8em;
+        z-index: 100;
+    }
+
+}
+
+
 body { 
   font-size: 100%;
   line-height: 0.8; 

@@ -120,7 +120,13 @@ class BallController < ApplicationController
           "Ew. It looks like Yardi",
         ],
         engineer: [
-          "I can do it in less than two weeks"
+          "I can do it in less than two weeks",
+          "Unable to reprodruce",
+          "I can do it in less than two weeks",
+          "I can do it in less than two weeks",
+          "20 points",
+          "That's just flaky tests",
+          "I'm not sleeping - I'm waiting for CI"
         ],
         apple: [
           "Did you break the apple script?",
