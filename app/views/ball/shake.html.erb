@@ -2,21 +2,41 @@
   <%= javascript_include_tag "shake.js", async: true %>
 <% end %>
 
-<%= form_tag(@form_url, method: :get, id: "shakeForm") do %>
-  <%= select_tag("answer_type", options_for_select(@form.answer_types, @answer_type)) %>
-  <%= submit_tag "Shake", class: "btn btn-primary" %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    &nbsp;
+  </div>
+  <div class="row">
+    <div class="col-md-3">&nbsp;</div>
+    <div class="col-md-6">
+      <%= form_tag(@form_url, method: :get, id: "shakeForm") do %>
+        <%= select_tag(
+          "answer_type", 
+          options_for_select(@form.answer_types, @answer_type)
+        ) %>
+        <%= submit_tag "Shake", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class=col-md-3">&nbsp;</div>
+  </div>
 
-<div class="answer-triangle">
+  <div class="row">
 
-<div class="shake shake-slow dampshake damp-shake-harlem">
+    <div class="answer-triangle">
 
-<%= link_to @answers_list.sample, ball_shake_path, class: "ball-answer", onClick: "$('#shakeForm').submit()" %>
+      <div class="shake shake-slow dampshake damp-shake-harlem">
 
+        <%= link_to(
+          @answers_list.sample, 
+          ball_shake_path, 
+          class: "ball-answer", 
+          onClick: "$('#shakeForm').submit()"
+        )%>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-</div>
-
 
 
 <%= javascript_include_tag "custom_shake_handler.js", async: true %>
