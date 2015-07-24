@@ -95,6 +95,7 @@ class BallController < ApplicationController
           "Ask Grand Director Emma",
           "That’s not what the customer wants",
           "That’s not what I asked",
+          "what is the status?",
           "Sure. Gifs are a great addition",
         ],
         ux: [
