@@ -11,7 +11,7 @@
 
 <div class="shake shake-slow dampshake damp-shake-harlem">
 
-<%= link_to @answers_list.sample, ball_shake_path, class: "ball-answer"%>
+<%= link_to @answers_list.sample, ball_shake_path, class: "ball-answer", onClick: "$('#shakeForm').submit()" %>
 
 </div>
 
