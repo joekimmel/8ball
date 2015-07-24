@@ -176,7 +176,7 @@ class BallController < ApplicationController
 
   def shake
 
-    @form_url = request.original_url.include?("ball")? "shake" : "ball/shake"
+    @form_url = request.original_url.include?("ball/shake")? "shake" : "ball/shake"
 
     @answer_type = params[:answer_type] || "traditional"
     @form = ShakeForm.new(@answer_type)
