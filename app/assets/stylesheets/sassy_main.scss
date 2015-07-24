@@ -3,7 +3,7 @@
 
 .ball-answer{
   text-align: center;
-  color: #00aedb;
+  color: white;
   text-decoration: none;
   font-variant: small-caps;
   font-family: sans-serif;
@@ -22,8 +22,8 @@
     width: 0;
     height: 0;
     border: 10em solid transparent;
-    border-top: 13em solid black;
-    left: 1em;
+    border-top: 13em solid blue;
+    left: 0em;
     top: 1em;
     z-index: 10;
     margin: auto;
@@ -33,19 +33,55 @@ html {
   font-size: 1.5em; 
 }
 
+.wrapper {
+    margin: 2em auto;
+    position: relative;
+}
+
+.triangle-wrapper {
+    padding-top: 6em;
+}
+
+.wrapper, .triangle-wrapper, .graphic {
+    width: 100%;
+    padding-bottom: 100%;
+    max-width: 25em;
+}
+
+.triangle-wrapper, .graphic {
+    position: absolute;
+}
+
+.graphic {
+    background-size: contain;
+    background-image: image-url("t8ball.png");
+    z-index: 200;
+}
+
+
+
+
+
 @media (min-width: 300px) and (max-width: 800px){
     html {
         font-size: 1.0em;
     }
     .answer-triangle {
         border: 7em solid transparent;
-        border-top: 10em solid black;
+        border-top: 10em solid blue;
     }
     .ball-answer{
         font-size: 110%;
         top: -8.7em;
         left: -1.8em;
         z-index: 100;
+    }
+    .wrapper, .triangle-wrapper, .graphic {
+        width: 20em;
+    }
+
+    .triangle-wrapper {
+        padding-top: 5em;
     }
 
 }
